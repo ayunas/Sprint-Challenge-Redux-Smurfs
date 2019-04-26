@@ -31,7 +31,11 @@
           fetchingSmurfs : false
         }
 
-        
+      case "ADD":
+        return {
+          ...state,
+          smurfs : state.smurfs.concat(action.payload)
+        }  
 
       default : 
         return state;

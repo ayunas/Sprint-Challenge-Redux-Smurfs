@@ -1,5 +1,8 @@
 
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import {connect} from 'react-redux';
+import {addSmurf} from '../actions';
+
 
 class AddSmurf extends Component {
     constructor(props) {
@@ -14,14 +17,17 @@ class AddSmurf extends Component {
     }
 
     smurfy = (e) => {
+        e.preventDefault();
         this.setState({
             smurf : {
-                [e.target.name] : e.target.value
+                name : this.state.name,
+                age : this.state.age,
+                height : this.state.height
             }
         })
     }
 
-    smurfify = (e) => {
+    setInput = (e) => {
         this.setState({
             [e.target.name] : e.target.value
         })
@@ -31,13 +37,18 @@ class AddSmurf extends Component {
   render() {
     return (
       <form onSubmit={this.smurfy}>
-        <input name='name' type='text' value={this.state.name} onChange={this.smurfify}placeholder="Smurf's Name" />
-        <input name='age' type='text' value={this.state.age} onChange={this.smurfify}placeholder="Smurf's Age" />
-        <input name='height' type='text' value={this.state.height} onChange={this.smurfify}placeholder= "Smurf's Height" />
-        <button onClick={ () => this.props.addSmurf('smurf') }>Add Smurf</button>
+        <input name='name' type='text' value={this.state.name} onChange={this.setInput}placeholder="Smurf's Name" />
+        <input name='age' type='text' value={this.state.age} onChange={this.setInput}placeholder="Smurf's Age" />
+        <input name='height' type='text' value={this.state.height} onChange={this.setInput}placeholder= "Smurf's Height" />
+        <button onClick={ () => {
+            this.props.addSmurf({
+                name: this.state.name, 
+                age : this.state.age,
+                height:this.state.height
+                })} }>Add Smurf</button>
       </form>
     )
   }
 }
 
-export default AddSmurf;
+export default connect(null,{addSmurf})(AddSmurf);
