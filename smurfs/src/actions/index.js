@@ -33,11 +33,18 @@ export function getSmurfs(url) {
 }
 
 export function addSmurf(smurf) {
-
   return {
     type: 'ADD', 
     payload : smurf
   }
-
 }
+
+export function banish(smurf) {
+  return {
+    type: "BANISH",
+    payload : smurf
+  }
+} 
+
+
 

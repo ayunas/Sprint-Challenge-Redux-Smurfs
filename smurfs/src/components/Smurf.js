@@ -1,9 +1,17 @@
 import React from 'react';
-import './App.scss';
+import {connect} from 'react-redux';
+
+import {banish} from '../actions';
+
 
 
 
 const Smurf = (props) => {
+    const smurf = {
+        name: props.smurf.name,
+        age : props.smurf.age,
+        height: props.smurf.height
+    }
 
     return (
 
@@ -12,9 +20,10 @@ const Smurf = (props) => {
         <p>{props.smurf.name}</p>
         <p>{props.smurf.age}</p>
         <p>{props.smurf.height}</p>
+        <button onClick={ () => props.banish(smurf) }>Banish from the Village</button>
     </figure>
     
     )
 }
 
-export default Smurf;
+export default connect(null,{banish})(Smurf);

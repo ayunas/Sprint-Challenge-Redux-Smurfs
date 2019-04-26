@@ -44,7 +44,8 @@ class AddSmurf extends Component {
             this.props.addSmurf({
                 name: this.state.name, 
                 age : this.state.age,
-                height:this.state.height
+                height:this.state.height,
+                
                 })} }>Add Smurf</button>
       </form>
     )
