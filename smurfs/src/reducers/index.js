@@ -32,6 +32,7 @@
         }
 
       case "ADD":
+        
         return {
           ...state,
           smurfs : state.smurfs.concat(action.payload)
