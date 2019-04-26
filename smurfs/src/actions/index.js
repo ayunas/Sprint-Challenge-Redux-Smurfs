@@ -44,19 +44,25 @@ export function addSmurf(smurf) {
             })
          })
          .catch( err => console.log('error in adding smurf to endpoint: ',err));
-
-  }
-
-  return {
-    type: 'ADD', 
-    payload : smurf
   }
 }
 
 export function banish(smurf) {
-  return {
-    type: "BANISH",
-    payload : smurf
+  console.log('banish has been triggered', smurf);
+
+  return (dispatch) => {
+    dispatch({type: "LOAD"});
+    axios.delete(`http://localhost:3333/smurfs/${smurf.id}`)
+         .then( res => {
+           console.log( 'delete success: ', res.data);
+           dispatch({type: "BANISH", payload: smurf.id})
+          } )
+         .catch( err => console.log(err));
+
+      // return {
+      // type: "BANISH",
+      // payload : smurf
+      // }
   }
 } 
 

@@ -10,7 +10,8 @@ const Smurf = (props) => {
     const smurf = {
         name: props.smurf.name,
         age : props.smurf.age,
-        height: props.smurf.height
+        height: props.smurf.height,
+        id: props.smurf.id
     }
 
     return (

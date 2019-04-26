@@ -35,13 +35,15 @@
         
         return {
           ...state,
-          smurfs : state.smurfs.concat(action.payload)
+          smurfs : state.smurfs.concat(action.payload),
+          fetchingSmurfs : false
         }
         
       case "BANISH":
         return {
           ...state,
-          smurfs : state.smurfs.filter( smurf => smurf.name !== action.payload.name )
+          smurfs : state.smurfs.filter( smurf => smurf.id !== action.payload )
+          // smurfs : state.smurfs.filter( smurf => smurf.id !== action.payload.id )
         }
 
       default : 
