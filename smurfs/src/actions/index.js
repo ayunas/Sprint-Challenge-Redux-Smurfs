@@ -16,7 +16,7 @@ import axios from 'axios';
    D - deleteSmurf
 */
 
-export function addSmurf(url) {
+export function getSmurfs(url) {
 
   console.log('addSmurf action creator has been triggered. ');
   return (dispatch) => {
@@ -24,7 +24,7 @@ export function addSmurf(url) {
     axios.get(url)
          .then( res => {
            console.log("API get request succeeded!: ", res.data);
-           dispatch({type: "ADD", payload: res.data})
+           dispatch({type: "SUCCESS", payload: res.data})
          })
          .catch( err => {
            console.log(err);
@@ -32,4 +32,12 @@ export function addSmurf(url) {
   }
 }
 
+export function addSmurf(smurf) {
+
+  return {
+    type: 'ADD', 
+    payload : smurf
+  }
+
+}
 

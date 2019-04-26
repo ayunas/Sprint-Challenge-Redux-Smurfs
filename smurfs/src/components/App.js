@@ -1,21 +1,12 @@
 import React, { Component } from 'react';
 import './App.scss';
-import axios from 'axios';
 import {connect} from 'react-redux';
 
 import Header from './Header';
 import Footer from './Footer';
 import SmurfVillage from './SmurfVillage';
-import {addSmurf} from '../actions';
-
-
-
-/*
- to wire this component up you're going to need a few things.
- I'll let you do this part on your own. 
- Just remember, `how do I `connect` my components to redux?`
- `How do I ensure that my component links the state to props?`
- */
+import {getSmurfs} from '../actions';
+import AddSmurf from './AddSmurf';
 
 class App extends Component {
 
@@ -23,6 +14,7 @@ class App extends Component {
     return (
       <div className="App">
        <Header/>
+       <AddSmurf/>
        <SmurfVillage/>
        <Footer/>       
       </div>
@@ -30,8 +22,10 @@ class App extends Component {
   }
 
   componentDidMount() {
-    this.props.addSmurf('http://localhost:3333/smurfs')
+    this.props.getSmurfs('http://localhost:3333/smurfs')
   }
 }
 
-export default connect(null,{addSmurf})(App);
+
+
+export default connect(null,{getSmurfs})(App);

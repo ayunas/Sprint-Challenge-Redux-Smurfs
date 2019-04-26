@@ -24,11 +24,14 @@
           fetchingSmurfs : true
         }
       
-      case "ADD":
+      case "SUCCESS":
         return {
           ...state,
-          smurfs : action.payload
+          smurfs : action.payload,
+          fetchingSmurfs : false
         }
+
+        
 
       default : 
         return state;
