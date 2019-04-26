@@ -1,9 +1,14 @@
 import React, { Component } from 'react';
 import './App.scss';
+import axios from 'axios';
+import {connect} from 'react-redux';
 
 import Header from './Header';
 import Footer from './Footer';
 import SmurfVillage from './SmurfVillage';
+import {addSmurf} from '../actions';
+
+
 
 /*
  to wire this component up you're going to need a few things.
@@ -13,6 +18,7 @@ import SmurfVillage from './SmurfVillage';
  */
 
 class App extends Component {
+
   render() {
     return (
       <div className="App">
@@ -22,6 +28,10 @@ class App extends Component {
       </div>
     );
   }
+
+  componentDidMount() {
+    this.props.addSmurf('http://localhost:3333/smurfs')
+  }
 }
 
-export default App;
+export default connect(null,{addSmurf})(App);

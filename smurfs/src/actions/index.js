@@ -1,3 +1,5 @@
+import axios from 'axios';
+
 /* 
   Action Types Go Here!
   Be sure to export each action type so you can pull it into your reducer
@@ -13,3 +15,20 @@
    U - updateSmurf
    D - deleteSmurf
 */
+
+export function addSmurf(url) {
+
+  console.log('addSmurf action creator has been triggered. ');
+  return (dispatch) => {
+    dispatch({type : "LOAD"});
+    axios.get(url)
+         .then( res => {
+           console.log("API get request succeeded!: ", res.data);
+         })
+         .catch( err => {
+           console.log(err);
+         })
+  }
+}
+
+

@@ -16,12 +16,26 @@
 
  function rootReducer(state={ smurfs : []}, action) {
 
-    return state;
+    switch (action.type) {
+      
+      case "LOAD":
+        return {
+          ...state,
+          fetchingSmurfs : true
+        }
+      
+      case "ADD":
+        return {
+          ...state
+        }
 
+      default : 
+        return state;
+    }
  }
 
  export default rootReducer;
- 
+
 /*
   You'll only need one smurf reducer for this project.
   Feel free to export it as a default and import as rootReducer. 
