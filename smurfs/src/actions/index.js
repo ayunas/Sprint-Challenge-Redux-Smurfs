@@ -24,6 +24,7 @@ export function addSmurf(url) {
     axios.get(url)
          .then( res => {
            console.log("API get request succeeded!: ", res.data);
+           dispatch({type: "ADD", payload: res.data})
          })
          .catch( err => {
            console.log(err);

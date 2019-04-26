@@ -26,7 +26,8 @@
       
       case "ADD":
         return {
-          ...state
+          ...state,
+          smurfs : action.payload
         }
 
       default : 
