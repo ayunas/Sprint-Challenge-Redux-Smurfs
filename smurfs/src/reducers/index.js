@@ -14,6 +14,14 @@
  }
 */
 
+ function rootReducer(state={ smurfs : []}, action) {
+
+    return state;
+
+ }
+
+ export default rootReducer;
+ 
 /*
   You'll only need one smurf reducer for this project.
   Feel free to export it as a default and import as rootReducer. 
