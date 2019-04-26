@@ -37,9 +37,9 @@ class AddSmurf extends Component {
   render() {
     return (
       <form onSubmit={this.smurfy}>
-        <input name='name' type='text' value={this.state.name} onChange={this.setInput}placeholder="Smurf's Name" />
-        <input name='age' type='text' value={this.state.age} onChange={this.setInput}placeholder="Smurf's Age" />
-        <input name='height' type='text' value={this.state.height} onChange={this.setInput}placeholder= "Smurf's Height" />
+        <input name='name' type='text' value={this.state.name} onChange={this.setInput}placeholder="Smurf's Name" /><br/>
+        <input name='age' type='text' value={this.state.age} onChange={this.setInput}placeholder="Smurf's Age" /><br/>
+        <input name='height' type='text' value={this.state.height} onChange={this.setInput}placeholder= "Smurf's Height" /><br/>
         <button onClick={ () => {
             this.props.addSmurf({
                 name: this.state.name, 

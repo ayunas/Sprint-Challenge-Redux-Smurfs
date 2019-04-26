@@ -2,8 +2,29 @@
   text-align: center;
 }
 
+.village {
+  display: flex;
+  flex-wrap: wrap;
+  border: 5px solid blue;
+  background: url('https://memegene.net/sites/default/files/styles/225x120/public/wallpaper/smurfs-clipart/141341/smurfs-clipart-house-141341-3794165.jpg?itok=aelOCAgq');
+}
+
 .smurf {
-  border : 1px solid red;
+  border : 5px groove black;
+  background-color: #3DACE1;
+  color: white;
+  border-radius: 30px;
+  padding: 10px;
+
+  button {
+    border-radius: 20px;
+  }
+
+}
+
+img {
+  width: 100px;
+  height: auto;
 }
 
 .App-header {

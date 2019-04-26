@@ -17,7 +17,7 @@ const Smurf = (props) => {
     return (
 
     <figure className='smurf'>
-        <img src='#' alt='smurf'/>
+        <img src='https://i.pinimg.com/originals/f8/2d/d8/f82dd8c5e63dc95d934ad2f5f5a044af.png' alt='smurf'/>
         <p>{props.smurf.name}</p>
         <p>{props.smurf.age}</p>
         <p>{props.smurf.height}</p>
