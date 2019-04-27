@@ -18,9 +18,9 @@ const Smurf = (props) => {
 
     <figure className='smurf'>
         <img src='https://i.pinimg.com/originals/f8/2d/d8/f82dd8c5e63dc95d934ad2f5f5a044af.png' alt='smurf'/>
-        <p>{props.smurf.name}</p>
-        <p>{props.smurf.age}</p>
-        <p>{props.smurf.height}</p>
+        <p>{props.smurf.name} Smurf</p>
+        <p>{props.smurf.age} years old</p>
+        <p>{props.smurf.height} cm tall</p>
         <button onClick={ () => props.banish(smurf) }>Banish from the Village</button>
     </figure>
     

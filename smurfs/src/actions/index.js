@@ -49,6 +49,7 @@ export function addSmurf(smurf) {
 
 export function banish(smurf) {
   console.log('banish has been triggered', smurf);
+  
 
   return (dispatch) => {
     dispatch({type: "LOAD"});

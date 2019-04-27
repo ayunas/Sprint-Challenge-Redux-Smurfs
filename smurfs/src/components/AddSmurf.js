@@ -33,7 +33,6 @@ class AddSmurf extends Component {
         })
     }
 
-
   render() {
     return (
       <form onSubmit={this.smurfy}>
@@ -41,11 +40,15 @@ class AddSmurf extends Component {
         <input name='age' type='text' value={this.state.age} onChange={this.setInput}placeholder="Smurf's Age" /><br/>
         <input name='height' type='text' value={this.state.height} onChange={this.setInput}placeholder= "Smurf's Height" /><br/>
         <button onClick={ () => {
+            this.setState({
+                name: '',
+                age : '',
+                height : ''
+            })
             this.props.addSmurf({
                 name: this.state.name, 
                 age : this.state.age,
                 height:this.state.height,
-                
                 })} }>Add Smurf</button>
       </form>
     )
