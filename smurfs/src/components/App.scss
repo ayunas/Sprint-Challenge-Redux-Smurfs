@@ -1,0 +1,82 @@
+.App {
+  text-align: center;
+}
+
+.village {
+  display: flex;
+  flex-wrap: wrap;
+  border: 5px solid blue;
+  background: url('https://memegene.net/sites/default/files/styles/225x120/public/wallpaper/smurfs-clipart/141341/smurfs-clipart-house-141341-3794165.jpg?itok=aelOCAgq');
+}
+
+header {
+  background-color: #3DACE1;
+  color: white;
+
+}
+
+.smurf {
+  border : 5px groove black;
+  background-color: #3DACE1;
+  color: white;
+  border-radius: 30px;
+  padding: 10px;
+  flex-basis: 180px;
+
+  button {
+    border-radius: 20px;
+    padding: 10px;
+    width: 100px;
+    background-color: red;
+    color: white;
+  }
+}
+
+form {
+  border: 1px solid green;
+  padding: 10px;
+
+  input {
+    margin: 5px;
+    height: 20px;
+    width: 150px;
+  }
+
+  button {
+    border-radius: 20px;
+    padding: 10px;
+    width: 100px;
+    background-color: #3DACE1;
+    color: white;
+  }
+
+}
+
+img {
+  width: 100px;
+  height: auto;
+}
+
+.App-header {
+  background-color: #222;
+  height: 150px;
+  padding: 20px;
+  color: white;
+}
+
+
+/* 
+// .App-logo {
+//   animation: App-logo-spin infinite 20s linear;
+//   height: 80px;
+// }
+
+// .App-title {
+//   font-size: 1.5em;
+// }
+
+// .App-intro {
+//   font-size: large;
+// } */
+
+

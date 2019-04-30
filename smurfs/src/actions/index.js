@@ -1,3 +1,5 @@
+import axios from 'axios';
+
 /* 
   Action Types Go Here!
   Be sure to export each action type so you can pull it into your reducer
@@ -13,3 +15,57 @@
    U - updateSmurf
    D - deleteSmurf
 */
+
+export function getSmurfs(url) {
+
+  console.log('getSmurfs action creator has been triggered. ');
+  return (dispatch) => {
+    dispatch({type : "LOAD"});
+    axios.get(url)
+         .then( res => {
+           console.log("API get request succeeded!: ", res.data);
+           dispatch({type: "SUCCESS", payload: res.data})
+         })
+         .catch( err => {
+           console.log(err);
+         })
+  }
+}
+
+export function addSmurf(smurf) {
+  console.log('addSmurfs action creator has been triggered.');
+  return (dispatch) => {
+    dispatch({type: "LOAD"});
+    axios.post('http://localhost:3333/smurfs',smurf)
+         .then( res => {
+            console.log("post successful ", res.data[res.data.length-1]);
+            dispatch({
+              type: "ADD", payload: res.data[res.data.length-1]
+            })
+         })
+         .catch( err => console.log('error in adding smurf to endpoint: ',err));
+  }
+}
+
+export function banish(smurf) {
+  console.log('banish has been triggered', smurf);
+  
+
+  return (dispatch) => {
+    dispatch({type: "LOAD"});
+    axios.delete(`http://localhost:3333/smurfs/${smurf.id}`)
+         .then( res => {
+           console.log( 'delete success: ', res.data);
+           dispatch({type: "BANISH", payload: smurf.id})
+          } )
+         .catch( err => console.log(err));
+
+      // return {
+      // type: "BANISH",
+      // payload : smurf
+      // }
+  }
+} 
+
+
+
