@@ -4,7 +4,8 @@
   "description": "Redux Sprint Challenge",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js"
+    "start": "node server.js",
+    "server": "nodemon server.js"
   },
   "repository": {
     "type": "git",
@@ -19,6 +20,7 @@
   "homepage": "https://github.com/LambdaSchool/Sprint-Challenge--Redux#readme",
   "dependencies": {
     "cors": "^2.8.4",
+    "dotenv": "^8.0.0",
     "express": "^4.16.3"
   },
   "devDependencies": {

@@ -1,5 +1,8 @@
 const express = require('express');
 const cors = require('cors');
+const envSetup = require('dotenv');
+envSetup.config();
+
 const port = 3333;
 
 const server = express();
@@ -20,9 +23,11 @@ let smurfs = [
     id: 0
   }
 ];
+
 server.get('/smurfs', (req, res) => {
   res.json(smurfs);
 });
+
 let smurfId = smurfs.length;
 
 server.post('/smurfs', (req, res) => {
@@ -34,9 +39,11 @@ server.post('/smurfs', (req, res) => {
       res
     );
   }
+
   const findSmurfByName = smurf => {
     return smurf.name === name;
   };
+
   if (smurfs.find(findSmurfByName)) {
     return sendUserError(
       `Ya gone did smurfed! ${name} already exists in the smurf DB.`,
@@ -79,7 +86,8 @@ server.delete('/smurfs/:id', (req, res) => {
   }
 });
 
-server.listen(port, err => {
+server.listen(process.env.PORT, err => {
   if (err) console.log(err);
-  console.log(`server is listening on port ${port}`);
+  console.log(`server is listening on port ${process.env.PORT}`);
 });
+
