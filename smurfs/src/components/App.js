@@ -22,7 +22,7 @@ class App extends Component {
   }
 
   componentDidMount() {
-    this.props.getSmurfs('http://localhost:3333/smurfs')
+    this.props.getSmurfs('https://smurfs-redux.herokuapp.com/smurfs')
   }
 }
 

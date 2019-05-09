@@ -36,7 +36,7 @@ export function addSmurf(smurf) {
   console.log('addSmurfs action creator has been triggered.');
   return (dispatch) => {
     dispatch({type: "LOAD"});
-    axios.post('http://localhost:3333/smurfs',smurf)
+    axios.post('https://smurfs-redux.herokuapp.com/smurfs',smurf)
          .then( res => {
             console.log("post successful ", res.data[res.data.length-1]);
             dispatch({
@@ -49,11 +49,10 @@ export function addSmurf(smurf) {
 
 export function banish(smurf) {
   console.log('banish has been triggered', smurf);
-  
 
   return (dispatch) => {
     dispatch({type: "LOAD"});
-    axios.delete(`http://localhost:3333/smurfs/${smurf.id}`)
+    axios.delete(`https://smurfs-redux.herokuapp.com/smurfs/${smurf.id}`)
          .then( res => {
            console.log( 'delete success: ', res.data);
            dispatch({type: "BANISH", payload: smurf.id})
